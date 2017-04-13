@@ -30,6 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        // Disables back button so app can not be entered via backdoor.
+        // Disables back button so app can not be entered via backdoor. Hello
     }
 }
