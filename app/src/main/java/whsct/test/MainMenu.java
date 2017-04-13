@@ -4,13 +4,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity {
+    public static final String NAME = "com.whsct.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
+        // Pull name from login
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(volunteerLogin.NAME);
+        TextView name = (TextView) findViewById(R.id.welcomeText);
+        name.setText(message);
     }
 
     public void notesButton(View view) {

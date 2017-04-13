@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private static boolean flag = false;
+    public static final String NAME = "com.whsct.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
     public void loginButton(View view) {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
+
+        // Pull username to Main Menu
+        EditText editText = (EditText) findViewById(R.id.usernamefield);
+        String message = editText.getText().toString();
+        intent.putExtra(NAME, "Hello " + message + "!");
         startActivity(intent);
     }
 

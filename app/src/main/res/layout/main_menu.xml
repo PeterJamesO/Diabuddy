@@ -17,16 +17,21 @@
     <!-- Main Text -->
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="157dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="56dp"
         android:text="Welcome!"
         android:textAlignment="center"
         android:textColor="#5989e5"
-        android:textSize="45sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="92dp"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp" />
+        tools:layout_editor_absoluteX="64dp" />
 
     <!-- Smaller text top -->
 
@@ -42,30 +47,30 @@
         android:layout_marginStart="55dp"
         android:background="#57cf5b"
         android:text="Call"
-        android:textColor="#18761b"
+        android:textColor="#ffffff"
         android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/notesbutton"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/notesbutton"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintVertical_bias="0.933" />
+        tools:layout_constraintTop_creator="1" />
 
     <!-- Emergency Button -->
     <Button
         android:id="@+id/emergencybutton"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="91dp"
+        android:layout_marginBottom="59dp"
         android:background="#eb9683"
         android:onClick="emergencyButton"
         android:text="Emergency"
         android:textAlignment="center"
-        android:textColor="#cc5236"
+        android:textColor="#ffffff"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +89,7 @@
         android:background="#e6aef2"
         android:onClick="notesButton"
         android:text="Notes"
-        android:textColor="#964ea5"
+        android:textColor="#ffffff"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/emergencybutton"
         app:layout_constraintHorizontal_bias="0.495"
