@@ -38,8 +38,6 @@ public class emergencyScreen extends AppCompatActivity {
         //Displays doctor number;
         Intent intent = getIntent();
         String message = intent.getStringExtra(settingMenu.DOCNUM);
-        TextView name = (TextView) findViewById(R.id.emergencyNumber);
-        name.setText(message);
     }
 }
 
