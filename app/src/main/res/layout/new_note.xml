@@ -4,24 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="whsct.test.Notes">
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Notes"
-        android:textColor="#5989e5"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context="whsct.test.newNote">
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButton6"
         style="?attr/imageButtonStyle"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -36,19 +22,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#e6aef2"
-        android:onClick="newNoteButton"
-        android:text="New Note"
-        android:textColor="#964ea5"
-        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:text="Notes"
+        android:textColor="#5989e5"
+        android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
