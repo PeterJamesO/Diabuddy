@@ -25,7 +25,8 @@
         <activity android:name=".Notes" />
         <activity android:name=".volunteerLogin" />
         <activity android:name=".volunteerMenu" />
-        <activity android:name=".volunteerSetting"></activity>
+        <activity android:name=".volunteerSetting" />
+        <activity android:name=".newNote"></activity>
     </application>
 
 </manifest>
