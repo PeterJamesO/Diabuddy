@@ -21,19 +21,20 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.51" />
 
     <TextView
         android:id="@+id/themeContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:text="Classic"
         android:textColor="#5989e5"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/themeText"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/themeText" />
 
     <TextView
         android:id="@+id/themeText"
@@ -43,35 +44,35 @@
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/numberContent" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/themeContent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/numberContent" />
 
     <TextView
         android:id="@+id/doctorText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="Doctor Email"
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/applicationContent"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/doctorContent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/applicationContent" />
 
     <TextView
         android:id="@+id/applicationContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:text="v1.0"
         android:textColor="#5989e5"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/applicationText"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/doctorText"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/applicationText" />
 
     <TextView
         android:id="@+id/applicationText"
@@ -81,10 +82,10 @@
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/emailContent"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/applicationContent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/emailContent" />
 
     <TextView
         android:id="@+id/emailText"
@@ -94,10 +95,10 @@
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailContent"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/emailContent"
@@ -106,59 +107,59 @@
         android:text="peterjameso@outlook.com"
         android:textColor="#5989e5"
         android:textSize="20sp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/emailText"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/applicationText"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/emailText" />
 
     <EditText
         android:id="@+id/doctorContent"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="0dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/doctorText"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberText"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/doctorText" />
 
     <TextView
         android:id="@+id/numberText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:text="Doctor Number"
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doctorContent" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberContent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/doctorContent" />
 
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:backgroundTint="#5989e5"
         android:onClick="logoutButton"
         android:text="Log Out"
         android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/themeContent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp" />
 
     <EditText
         android:id="@+id/numberContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="0dp"
         android:ems="10"
         android:inputType="phone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberText" />
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/themeText"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/numberText" />
 
     <ImageButton
         android:id="@+id/imageButton6"
