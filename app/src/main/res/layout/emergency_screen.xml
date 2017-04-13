@@ -87,19 +87,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:text="The essentials are:\n
-- Maintain Insulin Therapy - Testing and maintaining glucose and ketones\n
-- Maintain Diet - Follow normal diet\n
-- Warning Signs - If any of the below symptoms develop, call your doctor immediately:\n
-    •	Your blood sugar is over 250 mg/dL for 24 hours.\n
-    •	Your blood sugar is over 300 mg/dL for two tests in a row (in a two-to-eight hour period).\n
-    •	You find ketones in your urine.\n
-    •	You feel sleepier than usual.\n
-    •	You have trouble breathing.\n
-    •	You can't think clearly.\n
-    •	You throw up more than once.\n
-    •	You have diarrhea.\n
-    •	You have an infection.\n"
+        android:text="@string/emergencyInfoContent"
         android:textColor="#5989e5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -74,4 +74,22 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_emergency_screen">emergencyScreen</string>
+    <string name="emergencyInfoContent">
+        The essentials are:
+        \n- Maintain Insulin Therapy
+        \n- Testing and maintaining glucose and ketones
+        \n- Maintain Diet
+        \n- Follow normal diet
+        \n- Warning Signs
+        \n- If any of the below symptoms develop, call your doctor immediately:
+        \n\t• Your blood sugar is over 250 mg/dL for 24 hours.
+        \n\t• Your blood sugar is over 300 mg/dL for two tests in a row (in a two-to-eight hour period).
+        \n\t• You find ketones in your urine.
+        \n\t• You feel sleepier than usual.
+        \n\t• You have trouble breathing.
+        \n\t• You can\'t think clearly.
+        \n\t• You throw up more than once.
+        \n\t• You have diarrhoea.
+        \n\t• You have an infection.
+    </string>
 </resources>
