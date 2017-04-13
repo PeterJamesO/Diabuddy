@@ -28,7 +28,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginBottom="24dp"
-        android:background="#df2a30"
+        android:background="#ec2c33"
         android:onClick="emergencyButton"
         android:text="Emergency"
         android:textAlignment="center"
