@@ -1,0 +1,176 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#FFFFFF"
+    tools:context="whsct.test.MainActivity"
+    android:weightSum="1">
+
+    <!-- Title -->
+    <!--Title text - Diabuddy -->
+    <TextView
+        android:id="@+id/titletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="74dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="casual"
+        android:text="DIABUDDY"
+        android:textAlignment="center"
+        android:textColor="#5989e5"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <!--Subtitle text - Diabetic Login -->
+    <TextView
+        android:id="@+id/subtitletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="74dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="-10dp"
+        android:text="diabetic login"
+        android:textAlignment="center"
+        android:textColor="#5989e5"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titletext"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+
+    <!-- Text -->
+    <!-- Username -->
+    <TextView
+        android:id="@+id/passwordtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="-4dp"
+        android:text="Password"
+        android:textColor="#5989e5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordfield"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordfield" />
+
+    <!-- Password -->
+    <TextView
+        android:id="@+id/usertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+        android:text="Username"
+        android:textColor="#5989e5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/usernamefield"
+        app:layout_constraintLeft_toLeftOf="@+id/usernamefield"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/subtitletext" />
+
+
+    <!-- Fields -->
+    <!-- Username Field -->
+    <EditText
+        android:id="@+id/usernamefield"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:background="#5989e5"
+        android:ems="10"
+        android:hint="Enter name.."
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.504"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordtext" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/passwordfield"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:background="#5989e5"
+        android:ems="10"
+        android:hint="*******"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+
+    <!--Login Button -->
+    <!-- Log Me In Button -->
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="300dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="115dp"
+        android:background="#57cf5b"
+        android:onClick="loginButton"
+        android:text="Log Me In!"
+        android:textColor="#18761b"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Volunteer Switch Button -->
+    <Button
+        android:id="@+id/volunteerbutton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="153dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
+        android:onClick="changeVolunteerButton"
+        android:text="Volunteer Login"
+        android:textColor="#5989e5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_editor_absoluteX="257dp" />
+
+</android.support.constraint.ConstraintLayout>
