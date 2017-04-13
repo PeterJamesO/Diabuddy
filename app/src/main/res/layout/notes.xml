@@ -48,7 +48,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#e6aef2"
+        android:backgroundTint="#59b2e5"
         android:onClick="newNoteButton"
         android:text="New Note"
         android:textColor="#ffffff"
