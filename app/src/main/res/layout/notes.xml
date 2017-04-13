@@ -7,34 +7,21 @@
     tools:context="whsct.test.Notes">
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/textView12"
+        android:layout_width="362dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#5989e5"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
         android:text="Notes"
-        android:textColor="#5989e5"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        style="?attr/imageButtonStyle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/arrow"
-        android:onClick="returnButton"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/emergencytext"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow" />
 
     <Button
         android:id="@+id/button"
@@ -42,13 +29,35 @@
         android:layout_height="70dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#e6aef2"
         android:onClick="newNoteButton"
         android:text="New Note"
-        android:textColor="#964ea5"
+        android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:cropToPadding="true"
+        android:elevation="0dp"
+        android:onClick="returnButton"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:srcCompat="@drawable/arrowwhite"
+        android:layout_marginLeft="28dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        android:layout_marginTop="8dp" />
+
 </android.support.constraint.ConstraintLayout>
