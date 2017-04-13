@@ -21,9 +21,9 @@ public class volunteerLogin extends AppCompatActivity {
 
     public void loginButton(View view) {
         // Go to main menu
+        Intent intent = new Intent(this, volunteerMenu.class);
 
         //Add username to main menu
-        Intent intent = new Intent(this, volunteerMenu.class);
         EditText editText = (EditText) findViewById(R.id.usernameField);
         String message = editText.getText().toString();
         intent.putExtra(NAME, "Hello " + message + "!");

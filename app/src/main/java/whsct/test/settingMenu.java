@@ -18,6 +18,7 @@ public class settingMenu extends AppCompatActivity {
         setContentView(R.layout.setting_menu);
     }
 
+
     public void returnButton(View view) {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);

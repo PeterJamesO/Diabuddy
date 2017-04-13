@@ -7,6 +7,23 @@
     tools:context="whsct.test.settingMenu">
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="362dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#5989e5"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:text="Settings"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/themeContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -22,20 +39,20 @@
         android:id="@+id/themeText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
         android:text="Theme"
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/doctorContent"
         android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/numberContent" />
 
     <TextView
         android:id="@+id/doctorText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Doctor Email"
         android:textColor="#5989e5"
         android:textSize="20sp"
@@ -43,36 +60,6 @@
         app:layout_constraintTop_toBottomOf="@+id/applicationContent"
         android:layout_marginLeft="30dp"
         app:layout_constraintLeft_toLeftOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        style="?attr/imageButtonStyle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/arrow"
-        android:onClick="returnButton"
-        app:srcCompat="@drawable/arrow"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/textView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.106" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Settings"
-        android:textColor="#5989e5"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/applicationContent"
@@ -94,7 +81,7 @@
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/emailContent"
         android:layout_marginLeft="30dp"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -103,14 +90,14 @@
         android:id="@+id/emailText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:text="Feedback Email"
         android:textColor="#5989e5"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
         android:layout_marginLeft="30dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/emailContent"
@@ -140,7 +127,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Doctor Number"
         android:textColor="#5989e5"
         android:textSize="20sp"
@@ -153,7 +140,7 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#5989e5"
         android:onClick="logoutButton"
         android:text="Log Out"
@@ -172,5 +159,26 @@
         android:inputType="phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numberText" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:cropToPadding="true"
+        android:elevation="0dp"
+        android:onClick="returnButton"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:srcCompat="@drawable/arrowwhite"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        android:layout_marginBottom="8dp" />
 
 </android.support.constraint.ConstraintLayout>
