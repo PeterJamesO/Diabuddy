@@ -18,4 +18,6 @@ public class Notes extends AppCompatActivity {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
+
+    //New button
 }
