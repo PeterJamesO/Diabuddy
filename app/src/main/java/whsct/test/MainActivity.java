@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        // Disables back button so app can not be entered via backdoor. Hello
+        // Disables back button so app can not be entered via backdoor and exits the app.
+        System.exit(0);
     }
 
     private boolean validate(String username, String password) {
