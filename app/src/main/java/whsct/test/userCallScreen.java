@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageButton;
 
 public class userCallScreen extends AppCompatActivity {
+    ImageButton button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,15 @@ public class userCallScreen extends AppCompatActivity {
         Chronometer simpleChronometer = (Chronometer) findViewById(R.id.callChronometer);
 
         simpleChronometer.start();
+
+        // Loudspeaker Button
+        button= (ImageButton)findViewById(R.id.loudspeakerButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button.setBackgroundResource(R.drawable.speakeroff);
+            }
+        });
     }
 
     public void endCallButton(View view) {
@@ -28,6 +39,9 @@ public class userCallScreen extends AppCompatActivity {
         Chronometer simpleChronometer = (Chronometer) findViewById(R.id.callChronometer);
         simpleChronometer.setBase(SystemClock.elapsedRealtime());
         simpleChronometer.stop();
+
+        // Loudspeaker Button
         startActivity(intent);
     }
+
 }
