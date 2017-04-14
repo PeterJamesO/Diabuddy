@@ -44,4 +44,9 @@ public class MainMenu extends AppCompatActivity {
         Intent intent = new Intent(this, settingMenu.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);    }
 }
