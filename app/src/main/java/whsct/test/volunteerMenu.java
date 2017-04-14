@@ -35,4 +35,10 @@ public class volunteerMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onBackPressed() {
+        // Log Out of app
+        Intent intent = new Intent(this, volunteerLogin.class);
+        startActivity(intent);
+    }
+
 }

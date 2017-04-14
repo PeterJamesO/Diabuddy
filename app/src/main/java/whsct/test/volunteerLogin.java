@@ -1,6 +1,7 @@
 package whsct.test;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,9 @@ public class volunteerLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_login);
+
+        TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
+        textView.setText("");
     }
 
     public void loginButton(View view) {
@@ -32,6 +36,9 @@ public class volunteerLogin extends AppCompatActivity {
 
         //Verify before continuing
         if (verify(s_username, s_password)) {
+            TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
+            textView.setTextColor(Color.GREEN);
+            textView.setText("Loading...");
             intent.putExtra(NAME, "Hello " + s_username);
 
             //Add button count to main menu
@@ -43,6 +50,7 @@ public class volunteerLogin extends AppCompatActivity {
 
         else {
             TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
+            textView.setTextColor(Color.RED);
             textView.setText("Error: Incorrect username or password!");
         }
 
@@ -62,9 +70,13 @@ public class volunteerLogin extends AppCompatActivity {
 
     //Verfication method
     private boolean verify(String username, String password) {
-        return true;
+        if (username.equalsIgnoreCase("Volunteer") && password.contentEquals("password")) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
-
 }
 
 
