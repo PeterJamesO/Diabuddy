@@ -32,7 +32,7 @@ public class volunteerLogin extends AppCompatActivity {
 
         //Verify before continuing
         if (verify(s_username, s_password)) {
-            intent.putExtra(NAME, "Hello " + username + "!");
+            intent.putExtra(NAME, "Hello" + s_username);
 
             //Add button count to main menu
             ctr++;

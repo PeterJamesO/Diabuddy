@@ -16,9 +16,15 @@ public class MainMenu extends AppCompatActivity {
 
         // Pull name from login
         Intent intent = getIntent();
-        String message = intent.getStringExtra(volunteerLogin.NAME);
+        String message = intent.getStringExtra(MainActivity.NAME);
         TextView name = (TextView) findViewById(R.id.welcomeText);
         name.setText(message);
+    }
+
+    public void callButton(View view) {
+        // Go to emergency screen
+        Intent intent = new Intent(this, userCallSetupScreen.class);
+        startActivity(intent);
     }
 
     public void notesButton(View view) {
