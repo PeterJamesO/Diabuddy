@@ -34,6 +34,7 @@
         <activity android:name=".newNote" />
         <activity android:name=".userCallSetupScreen" />
         <activity android:name=".userCallScreen" />
+        <activity android:name=".userRating"></activity>
     </application>
 
 </manifest>
