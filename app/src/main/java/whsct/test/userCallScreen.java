@@ -1,15 +1,16 @@
 package whsct.test;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Chronometer;
-import android.widget.ImageButton;
 
 public class userCallScreen extends AppCompatActivity {
-    ImageButton button;
+    public void boolean loudspeaker = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +22,20 @@ public class userCallScreen extends AppCompatActivity {
 
         simpleChronometer.start();
 
-        // Loudspeaker Button
-        button= (ImageButton)findViewById(R.id.loudspeakerButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button.setBackgroundResource(R.drawable.speakeroff);
-            }
-        });
+
+    }
+
+    public void loudspeakerButton(View view) {
+        //Loudspeaker
+        if (loudspeaker = true) {
+            AudioManager audioManager = (AudioManager)getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+            audioManager.setMode(AudioManager.MODE_IN_CALL);
+            audioManager.setSpeakerphoneOn(true);
+        }
+        else (loudspeaker = false) {
+            AudioManager audioManager = (AudioManager)getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+            audioManager.setSpeakerphoneOn(false);
+        }
     }
 
     public void endCallButton(View view) {
@@ -39,9 +46,9 @@ public class userCallScreen extends AppCompatActivity {
         Chronometer simpleChronometer = (Chronometer) findViewById(R.id.callChronometer);
         simpleChronometer.setBase(SystemClock.elapsedRealtime());
         simpleChronometer.stop();
-
-        // Loudspeaker Button
         startActivity(intent);
-    }
 
+    }
 }
+
+
