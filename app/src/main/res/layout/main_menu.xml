@@ -89,7 +89,7 @@
         android:layout_marginBottom="10dp"
         android:background="#59b2e5"
         android:onClick="notesButton"
-        android:text="Notes"
+        android:text="Note"
         android:textColor="#ffffff"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/emergencybutton"

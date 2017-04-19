@@ -44,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
 
     public void notesButton(View view) {
         // Go to emergency screen
-        Intent intent = new Intent(this, Notes.class);
+        Intent intent = new Intent(this, newNote.class);
         startActivity(intent);
     }
 
