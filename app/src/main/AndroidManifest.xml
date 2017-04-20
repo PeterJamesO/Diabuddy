@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="whsct.test">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+   <!-- Permissions
+
+    TODO: Request permissions on app launch. -->
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +31,6 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".settingMenu" />
         <activity android:name=".emergencyScreen" />
-        <activity android:name=".Notes" />
         <activity android:name=".volunteerLogin" />
         <activity android:name=".volunteerMenu" />
         <activity android:name=".volunteerSetting" />

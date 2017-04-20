@@ -34,7 +34,7 @@ public class newNote extends AppCompatActivity {
 
     public void returnButton(View view) {
         // Go to notes screen
-        Intent intent = new Intent(this, Notes.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
