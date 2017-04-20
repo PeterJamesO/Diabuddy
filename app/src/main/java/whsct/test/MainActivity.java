@@ -1,5 +1,6 @@
 package whsct.test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String NAME = "com.whsct.MESSAGE";
+    private TextView easteregg;
+    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.validationMsg);
         textView.setText("");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        easteregg = (TextView) findViewById(R.id.subtitletext);
+        easteregg.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(context, TestDatabaseActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
     }
 
     public void loginButton(View view) {
