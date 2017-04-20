@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="362dp"
+        android:layout_width="800dp"
         android:layout_height="0dp"
         android:background="#5989e5"
         android:paddingBottom="12dp"
