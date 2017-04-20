@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 public class settingMenu extends AppCompatActivity {
     //Doctor Number
-    Doctor doc1 = new Doctor();
     public static final String DOCNUM = "com.whsct.NUMBER";
 
 
@@ -28,7 +27,6 @@ public class settingMenu extends AppCompatActivity {
         // Doc Num
         EditText editText = (EditText) findViewById(R.id.numberContent);
         String message = editText.getText().toString();
-        doc1.setDoctorNumber(message);
         startActivity(intent);
     }
 

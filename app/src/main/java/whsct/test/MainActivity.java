@@ -68,4 +68,10 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    public void createAccount(View view) {
+        // Go to main menu
+        Intent intent = new Intent(this, newAccount.class);
+        startActivity(intent);
+    }
 }
