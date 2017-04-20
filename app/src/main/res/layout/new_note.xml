@@ -89,7 +89,7 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="0dp"
+        android:layout_width="800dp"
         android:layout_height="wrap_content"
         android:background="#5989e5"
         android:paddingBottom="12dp"
@@ -109,7 +109,6 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
@@ -120,9 +119,10 @@
         android:scaleType="centerInside"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintLeft_toLeftOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/textView6"
-        app:srcCompat="@drawable/arrowwhite" />
+        app:srcCompat="@drawable/arrowwhite"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/nameText"

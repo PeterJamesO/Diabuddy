@@ -8,6 +8,25 @@
     android:background="#ffffff">
 
     <TextView
+        android:id="@+id/textView26"
+        android:layout_width="800dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#5989e5"
+        android:minWidth="250dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:text="Diabuddy"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView24"
         android:layout_width="314dp"
         android:layout_height="68dp"
@@ -46,7 +65,7 @@
         android:layout_width="300dp"
         android:layout_height="89dp"
         android:layout_marginBottom="0dp"
-        android:background="#57cf5b"
+        android:backgroundTint="#57cf5b"
         android:onClick="loginButton"
         android:text="Log Me In!"
         android:textColor="#ffffff"
@@ -125,36 +144,18 @@
         android:id="@+id/subtitleText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="volunteer login"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="#5989e5"
         android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@+id/titleText"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
+        android:textStyle="normal|bold"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="casual"
-        android:text="DIABUDDY"
-        android:textAlignment="center"
-        android:textColor="#5989e5"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_editor_absoluteY="85dp" />
 
 </android.support.constraint.ConstraintLayout>
