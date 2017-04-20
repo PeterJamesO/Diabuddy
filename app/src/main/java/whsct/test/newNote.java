@@ -52,4 +52,11 @@ public class newNote extends AppCompatActivity {
         startActivity(email);
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Intent intent = new Intent(this, MainMenu.class);
+        startActivity(intent);
+    }
+
 }

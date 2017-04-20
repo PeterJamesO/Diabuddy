@@ -94,14 +94,14 @@ public class MainMenu extends AppCompatActivity {
                 e.printStackTrace();
             }
             switch (state) {
+                //Outgoing
+                case TelephonyManager.CALL_STATE_OFFHOOK:
+                    break;
                 //Hangup
                 case TelephonyManager.CALL_STATE_IDLE:
                     Log.d("Apple fingers", "yay");
-                    intent = new Intent(context, userRating.class);
+                    intent.setClass(context, userRating.class);
                     startActivity(intent);
-                    break;
-                //Outgoing
-                case TelephonyManager.CALL_STATE_OFFHOOK:
                     break;
                 //Incoming
                 case TelephonyManager.CALL_STATE_RINGING:
