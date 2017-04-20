@@ -21,8 +21,6 @@ public class volunteerLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_login);
 
-        TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
-        textView.setText("");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
@@ -38,9 +36,6 @@ public class volunteerLogin extends AppCompatActivity {
 
         //Verify before continuing
         if (verify(s_username, s_password)) {
-            TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
-            textView.setTextColor(Color.GREEN);
-            textView.setText("Loading...");
             intent.putExtra(NAME, "Hello " + s_username);
 
             //Add button count to main menu
@@ -51,9 +46,7 @@ public class volunteerLogin extends AppCompatActivity {
         }
 
         else {
-            TextView textView = (TextView) findViewById(R.id.passwordIncorrect);
-            textView.setTextColor(Color.RED);
-            textView.setText("Error: Incorrect username or password!");
+
         }
 
     }

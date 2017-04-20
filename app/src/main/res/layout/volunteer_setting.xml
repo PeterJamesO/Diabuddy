@@ -7,6 +7,21 @@
     tools:context="whsct.test.volunteerSetting">
 
     <TextView
+        android:id="@+id/textView22"
+        android:layout_width="314dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="20dp"
+        android:text="This area of the app is still a work in progress. Thank you for your patience and apologies for any inconvenience."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
         android:id="@+id/textView8"
         android:layout_width="362dp"
         android:layout_height="0dp"
