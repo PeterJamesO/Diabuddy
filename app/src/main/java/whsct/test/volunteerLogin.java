@@ -66,12 +66,7 @@ public class volunteerLogin extends AppCompatActivity {
 
     //Verfication method
     private boolean verify(String username, String password) {
-        if (username.equalsIgnoreCase("Volunteer") && password.contentEquals("password")) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return username.equalsIgnoreCase("Volunteer") && password.contentEquals("password");
     }
 }
 
