@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private DataSource dataSource;
     private List<UserData> users;
 
-    @Override
+    @Override // On Create
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        // Easter Egg function
         easteregg = (TextView) findViewById(R.id.subtitletext);
         easteregg.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Login Button
     public void loginButton(View view) {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
@@ -84,19 +86,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    // Change to volunteer login
     public void changeVolunteerButton(View view) {
         // Change to volunteer login
         Intent intent = new Intent(this, volunteerLogin.class);
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed(){
-        // Disables back button so app can not be entered via backdoor and exits the app.
-        System.exit(0);
-    }
-
+    // Validates username and password
     private boolean validate(String username, String password) {
         if (username.equalsIgnoreCase("diabetic") && password.contentEquals("password")) {
             return true;
@@ -106,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Moves to new account screen
     public void createAccount(View view) {
         // Go to main menu
         Intent intent = new Intent(this, newAccount.class);

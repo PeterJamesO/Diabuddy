@@ -51,7 +51,7 @@ public class volunteerLogin extends AppCompatActivity {
 
     }
 
-
+    // Move to diabetic login
     public void changeDiabeticButton(View view) {
         // Change to volunteer login
         Intent intent = new Intent(this, MainActivity.class);

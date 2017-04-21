@@ -54,6 +54,7 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
+    // Call button - calls number then will travel to user rating screen seen in function below.
     public void callButton(View view) {
         System.out.println("start");
         registerListener(context);
@@ -72,18 +73,21 @@ public class MainMenu extends AppCompatActivity {
         System.out.println("end");
     }
 
+    // Goes to notes screen
     public void notesButton(View view) {
         // Go to emergency screen
         Intent intent = new Intent(this, newNote.class);
         startActivity(intent);
     }
 
+    // Goes to emergency screen
     public void emergencyButton(View view) {
         // Go to emergency screen
         Intent intent = new Intent(this, emergencyScreen.class);
         startActivity(intent);
     }
 
+    // Goes to setting screen
     public void settingButton(View view) {
         // Go to setting screen
         Intent intent = new Intent(this, settingMenu.class);
@@ -92,8 +96,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        //Stops option to go backwards.
     }
 
     public void registerListener(Context context) {
@@ -101,11 +104,11 @@ public class MainMenu extends AppCompatActivity {
                 PhoneStateListener.LISTEN_CALL_STATE);
     }
 
-
+    // Call states
     public class MyPhoneStateListener extends PhoneStateListener {
 
 
-        @Override
+        /*@Override
         public void onCallStateChanged(int state, String incomingNumber) {
             try {
               Intent intentUR = Intent.parseUri(incomingNumber, Intent.URI_INTENT_SCHEME);
@@ -129,6 +132,6 @@ public class MainMenu extends AppCompatActivity {
                     phoneRinging = true;
                     break;
             }
-        }
+        }*/
     }
 }
