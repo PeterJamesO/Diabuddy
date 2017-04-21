@@ -95,7 +95,8 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        //Stops option to go backwards.
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     // Moves to this screen after call
