@@ -1,5 +1,6 @@
 package whsct.test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,16 @@ public class newAccount extends AppCompatActivity {
     private EditText password;
     private EditText email;
     private EditText number;
+
+    // What needs to be valid to allow account to be created
+    public boolean criteria(String username, String password, String email, String number) {
+        if (isValidUsername(username) && isValidPassword(password) && isValidEmail(email) && isValidNumber(number)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +56,19 @@ public class newAccount extends AppCompatActivity {
 
         // Get user to log in with new account
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        if(validAccount()) {
+            startActivity(intent);
+        }
     }
 
     // Account validation
-    public void validAccount(View view) {
-        if (true) {
+    public boolean validAccount() {
+        if (criteria(username.getText().toString(), password.getText().toString(), email.getText().toString(), number.getText().toString())) {
             Toast.makeText(newAccount.this, "Account Created", Toast.LENGTH_SHORT).show();
+            return true;
         } else {
             Toast.makeText(newAccount.this, "Invalid - Check fields above.", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 
@@ -63,7 +78,7 @@ public class newAccount extends AppCompatActivity {
         Pattern pattern;
         Matcher matcher;
 
-        final String USERNAME_PATTERN = "(/^(?=.*\\d)[A-Za-z]{4,}$/)";
+        final String USERNAME_PATTERN = "^(?!.*\\.\\.)(?!.*\\.$)[^\\W][\\w.]{0,29}$";
 
         pattern = Pattern.compile(USERNAME_PATTERN);
         matcher = pattern.matcher(username);
@@ -77,7 +92,7 @@ public class newAccount extends AppCompatActivity {
         Pattern pattern;
         Matcher matcher;
 
-        final String PASSWORD_PATTERN = "(/^(?=.*\\d)(?=.*[A-Z])[0-9a-zA-Z]{4,}$/)";
+        final String PASSWORD_PATTERN = "^(?=.{8,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$";
 
         pattern = Pattern.compile(PASSWORD_PATTERN);
         matcher = pattern.matcher(password);
@@ -91,7 +106,7 @@ public class newAccount extends AppCompatActivity {
         Pattern pattern;
         Matcher matcher;
 
-        final String EMAIL_PATTERN = "(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$)";
+        final String EMAIL_PATTERN = "[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+";
 
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
@@ -105,7 +120,7 @@ public class newAccount extends AppCompatActivity {
         Pattern pattern;
         Matcher matcher;
 
-        final String NUMBER_PATTERN = "(/^[0-9]{11,}$/)";
+        final String NUMBER_PATTERN = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$";
 
         pattern = Pattern.compile(NUMBER_PATTERN);
         matcher = pattern.matcher(number);
