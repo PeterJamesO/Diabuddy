@@ -14,12 +14,15 @@ import android.widget.EditText;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 
 public class newNote extends AppCompatActivity {
     private EditText username;
     private EditText content;
+    private DataSource dataSource;
+    private List<UserData> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,10 @@ public class newNote extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.nameText);
         content = (EditText) findViewById(R.id.contentText);
+
+        dataSource = new DataSource(this);
+        dataSource.open();
+        users = dataSource.getAllUsers();
         
     }
 
@@ -46,7 +53,7 @@ public class newNote extends AppCompatActivity {
 
         Intent email = new Intent(android.content.Intent.ACTION_SEND);
         email.setType("message/rfc822");
-        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"peterjameso@outlook.com"});
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{users.get(0).getEmail()});
         email.putExtra(Intent.EXTRA_SUBJECT, "Note from " + username.getText().toString() + " - " + date);
         email.putExtra(android.content.Intent.EXTRA_TEXT, "Username:" + username.getText().toString() + "\nContent: " + content.getText().toString());
         startActivity(email);
