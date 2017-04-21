@@ -46,13 +46,14 @@ public class userRating extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Submit button
     public void submitButton(View view){
         //sendEmail();
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
-
+    // Switch Position Boolean
     public String onCheckedChanged() {
         if (switchB.isChecked()) {
             return "yes";
@@ -62,6 +63,7 @@ public class userRating extends AppCompatActivity {
         }
     }
 
+    // Sends feedback email to developer with feedback from user.
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void sendEmailButton(View view) {
         // Send email feedback to developer
@@ -76,6 +78,7 @@ public class userRating extends AppCompatActivity {
         Log.d("DEBUGGER", "We did it");
     }
 
+    // On restart, app will move to another screen.
     @Override
     protected void onRestart() {
         super.onRestart();

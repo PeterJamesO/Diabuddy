@@ -31,12 +31,14 @@ public class volunteerMenu extends AppCompatActivity {
         count.setText(ctr);
     }
 
+    // Setting button
     public void settingButton(View view) {
         // Go to setting screen
         Intent intent = new Intent(this, volunteerSetting.class);
         startActivity(intent);
     }
 
+    // Log out of app when back button pressed.
     public void onBackPressed() {
         // Log Out of app
         Intent intent = new Intent(this, volunteerLogin.class);

@@ -19,7 +19,7 @@ public class settingMenu extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
-
+    // Return button
     public void returnButton(View view) {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
@@ -28,6 +28,7 @@ public class settingMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Logs user out of the app
     public void logoutButton(View view) {
         // Log Out of app
         Intent intent = new Intent(this, MainActivity.class);

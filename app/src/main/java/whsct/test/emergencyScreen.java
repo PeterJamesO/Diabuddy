@@ -43,26 +43,32 @@ public class emergencyScreen extends AppCompatActivity {
         emergencyButton = (Button) findViewById(R.id.emergencyButton);
     }
 
+    // Returns to main menu
     public void returnButton(View view) {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 
+    // Calls Doc emergency number
     public void emergencyButton(View view) {
         // Calls doctor with listed number
-        emergencyButton.setText(users.get(0).getNumber());
+        emergencyButton.setText(users.get(users.size() - 1).getNumber());
         registerListener(context);
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:07422661220"));
+        intent.setData(Uri.parse("tel:"+users.get(users.size() - 1).getNumber()));
         if (ContextCompat.checkSelfPermission(emergencyScreen.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(emergencyScreen.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
         }
         // Start call on second click
-        if (confirmed) startActivity(intent);
+        if (confirmed) {
+            startActivity(intent);
+
+        }
         confirmed = true;
     }
 
+    // Registers listener
     public void registerListener(Context context) {
         ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).listen(new MyPhoneStateListener(),
                 PhoneStateListener.LISTEN_CALL_STATE);
@@ -71,6 +77,7 @@ public class emergencyScreen extends AppCompatActivity {
     @Override
     protected void onResume() {
         dataSource.open();
+        confirmed = false;
         super.onResume();
         emergencyButton.setText("EMERGENCY");
     }
@@ -81,7 +88,7 @@ public class emergencyScreen extends AppCompatActivity {
         super.onPause();
     }
 
-
+    //Call states
     public class MyPhoneStateListener extends PhoneStateListener {
         Intent intent;
 
