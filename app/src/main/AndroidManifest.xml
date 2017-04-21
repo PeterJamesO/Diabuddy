@@ -40,7 +40,6 @@
         <activity android:name=".volunteerSetting" />
         <activity android:name=".newNote" />
         <activity android:name=".userRating" />
-        <activity android:name=".incomingCall" />
         <activity android:name=".newAccount"></activity>
     </application>
 

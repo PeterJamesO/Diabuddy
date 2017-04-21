@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,17 +47,18 @@ public class MainActivity extends AppCompatActivity {
         // Validate before continuing
 
         // validate(username, password)
-        if (true) {
+        if (username.equalsIgnoreCase("Diabetic") && password.contentEquals("Password")) {
             TextView textView = (TextView) findViewById(R.id.validationMsg);
             textView.setTextColor(Color.GREEN);
-            textView.setText("Loading...");
+            textView.setText("LOADING...");
             intent.putExtra(NAME, "Hello " + username + "!");
             startActivity(intent);
         }
         else {
             TextView textView = (TextView) findViewById(R.id.validationMsg);
             textView.setTextColor(Color.RED);
-            textView.setText("Incorrect, try again");
+            textView.setText("INCORRECT, TRY AGAIN");
+
         }
     }
 

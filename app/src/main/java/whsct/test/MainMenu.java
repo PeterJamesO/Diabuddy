@@ -15,15 +15,20 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class MainMenu extends AppCompatActivity {
     public static final String NAME = "com.whsct.MESSAGE";
     Context context = this;
+    Intent intentUR;
+    Intent intentCall;
+    boolean phoneRinging = false;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -38,6 +43,7 @@ public class MainMenu extends AppCompatActivity {
         TextView name = (TextView) findViewById(R.id.welcomeText);
         name.setText(message);
 
+
         ImageView image = (ImageView) findViewById(R.id.imageView3);
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,20 +55,21 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void callButton(View view) {
-        Log.d("DEBUGGING:", "start");
-
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        Log.d("DEBUGGING:", "middle");
-        intent.setData(Uri.parse("tel:07422661220"));
+        System.out.println("start");
+        registerListener(context);
+        intentCall = new Intent(Intent.ACTION_CALL);
+        System.out.println("middle");
+        intentCall.setData(Uri.parse("tel:07422661220"));
         if (ContextCompat.checkSelfPermission(MainMenu.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainMenu.this, new String[]{Manifest.permission.CALL_PHONE},101);
         }
         else
         {
-            startActivity(intent);
+            startActivity(intentCall);
+            phoneRinging = true;
+
         }
-        Log.d("DEBUGGING:", "end");
-        registerListener(context);
+        System.out.println("end");
     }
 
     public void notesButton(View view) {
@@ -96,28 +103,32 @@ public class MainMenu extends AppCompatActivity {
 
 
     public class MyPhoneStateListener extends PhoneStateListener {
-        Intent intent;
+
 
         @Override
         public void onCallStateChanged(int state, String incomingNumber) {
             try {
-                intent = Intent.parseUri(incomingNumber, Intent.URI_INTENT_SCHEME);
+              Intent intentUR = Intent.parseUri(incomingNumber, Intent.URI_INTENT_SCHEME);
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
             switch (state) {
                 //Outgoing
                 case TelephonyManager.CALL_STATE_OFFHOOK:
+                    phoneRinging = false;
                     break;
                 //Hangup
                 case TelephonyManager.CALL_STATE_IDLE:
-                    Log.d("Apple fingers", "yay");
-                    intent.setClass(context, userRating.class);
-                    startActivity(intent);
+                    System.out.println("yay");
+                    phoneRinging = false;
+                    intentUR.setClass(context, userRating.class);
+                    startActivity(intentUR);
                     break;
                 //Incoming
                 case TelephonyManager.CALL_STATE_RINGING:
+                    phoneRinging = true;
                     break;
+
             }
         }
     }

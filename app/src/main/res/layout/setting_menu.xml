@@ -25,69 +25,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/themeContent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Classic"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/themeText" />
-
-    <TextView
-        android:id="@+id/themeText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Theme"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/themeContent"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/numberContent" />
-
-    <TextView
-        android:id="@+id/doctorText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Doctor Email"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/doctorContent"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/applicationContent" />
-
-    <TextView
-        android:id="@+id/applicationContent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="v1.0"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/doctorText"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/applicationText" />
-
-    <TextView
-        android:id="@+id/applicationText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Application Version"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/applicationContent"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/emailContent" />
-
-    <TextView
         android:id="@+id/emailText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -107,59 +44,23 @@
         android:text="peterjameso@outlook.com"
         android:textColor="#5989e5"
         android:textSize="20sp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/applicationText"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/emailText" />
-
-    <EditText
-        android:id="@+id/doctorContent"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/numberText"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/doctorText" />
-
-    <TextView
-        android:id="@+id/numberText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Doctor Number"
-        android:textColor="#5989e5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/numberContent"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/doctorContent" />
+        app:layout_constraintLeft_toLeftOf="@+id/emailText"
+        tools:layout_editor_absoluteY="101dp" />
 
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="89dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#5989e5"
         android:onClick="logoutButton"
         android:text="Log Out"
         android:textColor="#ffffff"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
-    <EditText
-        android:id="@+id/numberContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/themeText"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/numberText" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -181,5 +82,49 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="40dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/nameSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/passwordSettings"
+        tools:layout_editor_absoluteX="71dp" />
+
+    <EditText
+        android:id="@+id/passwordSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="71dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/docEmailSettings" />
+
+    <EditText
+        android:id="@+id/docEmailSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Doctor Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="71dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/docPhoneSettings" />
+
+    <EditText
+        android:id="@+id/docPhoneSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Doctor Phone Number"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="71dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton" />
 
 </android.support.constraint.ConstraintLayout>
