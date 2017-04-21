@@ -49,11 +49,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginButton(View view) {
+        // Deactivate any active user
+        for (UserData user: users) {
+            if (user.isActive()) {
+                user.setActive(false);
+            }
+        }
+
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
         boolean invalid = true;
 
-        // Pull username to Main Menu
         EditText usernameInput = (EditText) findViewById(R.id.usernamefield);
         String username = usernameInput.getText().toString();
         EditText passwordInput = (EditText) findViewById(R.id.passwordfield);
@@ -63,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
         int counter = 0;
         for (UserData user: users) {
             if (user.getUsername().equalsIgnoreCase(username) && users.get(counter).getPassword().contentEquals(password)) {
-                // Valid user
+                // Valid user - set user as active
+                user.setActive(true);
                 invalid = false;
 
                 TextView textView = (TextView) findViewById(R.id.validationMsg);
