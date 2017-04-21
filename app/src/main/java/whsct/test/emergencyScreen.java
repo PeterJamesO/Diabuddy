@@ -19,19 +19,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.Locale;
 
 public class emergencyScreen extends AppCompatActivity {
-    public static final String DOCNUM = "com.whsct.NUMBER";
-    Doctor doc1;
     Context context = this;
+    Button emergencyButton;
+    boolean confirmed = false;
 
+    private DataSource dataSource;
+    private List<UserData> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.emergency_screen);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        dataSource = new DataSource(this);
+        dataSource.open();
+        users = dataSource.getAllUsers();
+
+        emergencyButton = (Button) findViewById(R.id.emergencyButton);
     }
 
     public void returnButton(View view) {
@@ -42,19 +51,16 @@ public class emergencyScreen extends AppCompatActivity {
 
     public void emergencyButton(View view) {
         // Calls doctor with listed number
-        Log.d("DEBUGGING:", "start");
-
+        emergencyButton.setText(users.get(0).getNumber());
+        registerListener(context);
         Intent intent = new Intent(Intent.ACTION_CALL);
-        Log.d("DEBUGGING:", "middle");
         intent.setData(Uri.parse("tel:07422661220"));
         if (ContextCompat.checkSelfPermission(emergencyScreen.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(emergencyScreen.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
-        } else {
-            startActivity(intent);
         }
-        Log.d("DEBUGGING:", "end");
-        registerListener(context);
-        Log.d("DEBUGGING:", "Boom!");
+        // Start call on second click
+        if (confirmed) startActivity(intent);
+        confirmed = true;
     }
 
     public void registerListener(Context context) {
@@ -62,10 +68,17 @@ public class emergencyScreen extends AppCompatActivity {
                 PhoneStateListener.LISTEN_CALL_STATE);
     }
 
-    public void emergencyNumber(View view) {
-        //Displays doctor number;
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(settingMenu.DOCNUM);
+    @Override
+    protected void onResume() {
+        dataSource.open();
+        super.onResume();
+        emergencyButton.setText("EMERGENCY");
+    }
+
+    @Override
+    protected void onPause() {
+        dataSource.close();
+        super.onPause();
     }
 
 

@@ -19,17 +19,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.net.URISyntaxException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.util.List;
 
 public class MainMenu extends AppCompatActivity {
     public static final String NAME = "com.whsct.MESSAGE";
     Context context = this;
-    Intent intentUR;
-    Intent intentCall;
-    boolean phoneRinging = false;
-    MediaPlayer mediaPlayer;
+    private DataSource dataSource;
+    private List<UserData> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +33,13 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.main_menu);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        // Pull name from login
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.NAME);
-        TextView name = (TextView) findViewById(R.id.welcomeText);
-        name.setText(message);
+        dataSource = new DataSource(this);
+        dataSource.open();
+        users = dataSource.getAllUsers();
 
+        // Pull name from database
+        TextView name = (TextView) findViewById(R.id.welcomeText);
+        name.setText("Hello " + users.get(0).getUsername());
 
         ImageView image = (ImageView) findViewById(R.id.imageView3);
         image.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +125,6 @@ public class MainMenu extends AppCompatActivity {
                 case TelephonyManager.CALL_STATE_RINGING:
                     phoneRinging = true;
                     break;
-
             }
         }
     }

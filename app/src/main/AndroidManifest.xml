@@ -41,6 +41,7 @@
         <activity android:name=".newNote" />
         <activity android:name=".userRating" />
         <activity android:name=".newAccount"></activity>
+        <activity android:name=".TestDatabaseActivity"></activity>
     </application>
 
 </manifest>
