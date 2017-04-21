@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
     public void loginButton(View view) {
         // Deactivate any active user
         for (UserData user: users) {
-            if (user.isActive()) {
-                user.setActive(false);
+            if (user.getActive() == "yes") {
+                user.setActive("no");
             }
         }
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         for (UserData user: users) {
             if (user.getUsername().equalsIgnoreCase(username) && users.get(counter).getPassword().contentEquals(password)) {
                 // Valid user - set user as active
-                user.setActive(true);
+                user.setActive("yes");
                 invalid = false;
 
                 TextView textView = (TextView) findViewById(R.id.validationMsg);
@@ -98,16 +98,6 @@ public class MainActivity extends AppCompatActivity {
         // Change to volunteer login
         Intent intent = new Intent(this, volunteerLogin.class);
         startActivity(intent);
-    }
-
-    // Validates username and password
-    private boolean validate(String username, String password) {
-        if (username.equalsIgnoreCase("diabetic") && password.contentEquals("password")) {
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     // Moves to new account screen

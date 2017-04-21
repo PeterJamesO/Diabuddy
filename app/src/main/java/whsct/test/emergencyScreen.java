@@ -53,7 +53,7 @@ public class emergencyScreen extends AppCompatActivity {
     // Calls Doc emergency number
     public void emergencyButton(View view) {
         // Calls doctor with listed number
-        emergencyButton.setText(users.get(users.size() - 1).getNumber());
+        emergencyButton.setText(users.get(users.size() - 1).getNumber()); // TODO
         registerListener(context);
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:"+users.get(users.size() - 1).getNumber()));

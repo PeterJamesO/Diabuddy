@@ -55,7 +55,7 @@ public class newNote extends AppCompatActivity {
 
         Intent email = new Intent(android.content.Intent.ACTION_SEND);
         email.setType("message/rfc822");
-        email.putExtra(Intent.EXTRA_EMAIL, new String[]{users.get(0).getEmail()});
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{users.get(users.size() - 1).getEmail()}); // TODO
         email.putExtra(Intent.EXTRA_SUBJECT, "Note from " + username.getText().toString() + " - " + date);
         email.putExtra(android.content.Intent.EXTRA_TEXT, "Username:" + username.getText().toString() + "\nContent: " + content.getText().toString());
         startActivity(email);

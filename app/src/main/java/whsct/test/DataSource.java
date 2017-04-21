@@ -40,7 +40,7 @@ public class DataSource {
         mySQLiteHelper.close();
     }
     
-    public UserData createUser(String username, String password, String email, String number, boolean active) {
+    public UserData createUser(String username, String password, String email, String number, String active) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_USERNAME, username);
         values.put(MySQLiteHelper.COLUMN_PASSWORD, password);
@@ -89,7 +89,7 @@ public class DataSource {
         user.setPassword(cursor.getString(2));
         user.setEmail(cursor.getString(3));
         user.setNumber(cursor.getString(4));
-        user.setActive(Boolean.getBoolean(cursor.getString(5)));
+        user.setActive(cursor.getString(5));
         
         return user;
     }

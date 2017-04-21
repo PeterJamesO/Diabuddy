@@ -1,5 +1,7 @@
 package whsct.test;
 
+import java.util.List;
+
 /**
  * Created by jamiegardner on 20/04/2017.
  */
@@ -11,15 +13,16 @@ public class UserData {
     private String password;
     private String email;
     private String number;
-    private boolean active;
+    private String active;
 
     @Override
     public String toString() { return
-              "ID: "          + this.id +
-            "\nUsername:\t"   + this.username +
-            "\nPassword:\t"   + this.password +
-            "\nDr's Email\t"  + this.email +
-            "\nDr's Number\t" + this.number;
+            "ID:           \t" + this.id +
+            "\nUsername:   \t" + this.username +
+            "\nPassword:   \t" + this.password +
+            "\nDr's Email: \t" + this.email +
+            "\nDr's Number:\t" + this.number +
+            "\nIs Active:  \t" + this.active;
     }
 
     // Getters and Setters
@@ -63,7 +66,7 @@ public class UserData {
         this.number = number;
     }
 
-    public boolean isActive() { return active; }
+    public String getActive() { return active; }
 
-    public void setActive(boolean active) { this.active = active; }
+    public void setActive(String active) { this.active = active; }
 }

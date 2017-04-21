@@ -42,7 +42,9 @@ public class MainMenu extends AppCompatActivity {
 
         // Pull name from database
         TextView name = (TextView) findViewById(R.id.welcomeText);
-        name.setText("Hello " + users.get(users.size() - 1).getUsername());
+        Log.d("MainMenu", "Before active user");
+        name.setText("Hello " + users.get(users.size() - 1).getUsername()); // TODO
+        Log.d("MainMenu", "After active user");
 
         ImageView image = (ImageView) findViewById(R.id.imageView3);
         image.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +93,26 @@ public class MainMenu extends AppCompatActivity {
         // Go to setting screen
         Intent intent = new Intent(this, settingMenu.class);
         startActivity(intent);
+    }
+
+    // Check active status
+    /*
+        Loop through all users to find active user
+        Count from 0
+        return counter value once active user is found
+
+     */
+    public int activeUser() {
+        int counter = 0;
+        for (UserData user: users) {
+            if (user.getActive() == "yes") {
+                break;
+            }
+            else {
+                ++counter;
+            }
+        }
+        return counter;
     }
 
     @Override

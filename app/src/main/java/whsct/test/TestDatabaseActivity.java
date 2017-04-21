@@ -33,10 +33,10 @@ public class TestDatabaseActivity extends ListActivity {
         switch (view.getId()) {
             case R.id.addUser:
                 // Save to database
-                int random = new Random().nextInt(3);
-                String[] usernames = new String[] { "Bob", "Jo", "Betty" };
+                int random = new Random().nextInt(8);
+                String[] usernames = new String[] { "Bob", "Jo", "Betty", "Sean", "Mark", "Paddy", "Jasmin", "Weinerman" };
                 String email = usernames[random] + "@gmail.com";
-                user = dataSource.createUser(usernames[random], "ZAQzaq123", email, "+447516253460", false);
+                user = dataSource.createUser(usernames[random], "ZAQzaq123", email, "+447516253460", "no");
                 adapter.add("Username:\t" + user.getUsername() + "\nDr.'s email:\t" + user.getEmail());
                 break;
             case R.id.deleteUser:

@@ -51,7 +51,7 @@ public class newAccount extends AppCompatActivity {
                 password.getText().toString(),
                 email.getText().toString(),
                 number.getText().toString(),
-                false
+                "no"
         );
 
         // Get user to log in with new account
