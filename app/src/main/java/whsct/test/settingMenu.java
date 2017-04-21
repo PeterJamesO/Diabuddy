@@ -24,9 +24,7 @@ public class settingMenu extends AppCompatActivity {
         // Go to main menu
         Intent intent = new Intent(this, MainMenu.class);
 
-        // Doc Num
-        EditText editText = (EditText) findViewById(R.id.numberContent);
-        String message = editText.getText().toString();
+
         startActivity(intent);
     }
 

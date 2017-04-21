@@ -24,6 +24,9 @@ import java.util.List;
 public class MainMenu extends AppCompatActivity {
     public static final String NAME = "com.whsct.MESSAGE";
     Context context = this;
+    Intent intentCall;
+    Intent intentUR;
+    boolean phoneRinging = false;
     private DataSource dataSource;
     private List<UserData> users;
 
