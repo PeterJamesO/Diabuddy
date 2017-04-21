@@ -57,7 +57,6 @@ public class MainMenu extends AppCompatActivity {
     // Call button - calls number then will travel to user rating screen seen in function below.
     public void callButton(View view) {
         System.out.println("start");
-        registerListener(context);
         intentCall = new Intent(Intent.ACTION_CALL);
         System.out.println("middle");
         intentCall.setData(Uri.parse("tel:07422661220"));
@@ -99,39 +98,15 @@ public class MainMenu extends AppCompatActivity {
         //Stops option to go backwards.
     }
 
-    public void registerListener(Context context) {
-        ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).listen(new MainMenu.MyPhoneStateListener(),
-                PhoneStateListener.LISTEN_CALL_STATE);
+    // Moves to this screen after call
+    @Override
+    public void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, userRating.class);
+        if (phoneRinging) {
+            startActivity(intent);
+        }
+
     }
 
-    // Call states
-    public class MyPhoneStateListener extends PhoneStateListener {
-
-
-        /*@Override
-        public void onCallStateChanged(int state, String incomingNumber) {
-            try {
-              Intent intentUR = Intent.parseUri(incomingNumber, Intent.URI_INTENT_SCHEME);
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-            switch (state) {
-                //Outgoing
-                case TelephonyManager.CALL_STATE_OFFHOOK:
-                    phoneRinging = false;
-                    break;
-                //Hangup
-                case TelephonyManager.CALL_STATE_IDLE:
-                    System.out.println("yay");
-                    phoneRinging = false;
-                    intentUR.setClass(context, userRating.class);
-                    startActivity(intentUR);
-                    break;
-                //Incoming
-                case TelephonyManager.CALL_STATE_RINGING:
-                    phoneRinging = true;
-                    break;
-            }
-        }*/
-    }
 }
