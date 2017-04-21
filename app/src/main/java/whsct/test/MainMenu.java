@@ -42,7 +42,7 @@ public class MainMenu extends AppCompatActivity {
 
         // Pull name from database
         TextView name = (TextView) findViewById(R.id.welcomeText);
-        name.setText("Hello " + users.get(0).getUsername());
+        name.setText("Hello " + users.get(users.size() - 1).getUsername());
 
         ImageView image = (ImageView) findViewById(R.id.imageView3);
         image.setOnClickListener(new View.OnClickListener() {

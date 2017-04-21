@@ -17,16 +17,18 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PASSWORD = "Password";
     public static final String COLUMN_EMAIL = "Email";
     public static final String COLUMN_NUM   = "Telephone";
+    public static final String COLUMN_ACTIVE = "Active";
 
     private static final String DATABASE_NAME = "Diabuddy.db";
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_CREATE =
             "create table " + TABLE_NAME + "( " +
-            COLUMN_ID + " integer primary key autoincrement, " +
+            COLUMN_ID +       " integer primary key autoincrement, " +
             COLUMN_USERNAME + " text not null, " +
             COLUMN_PASSWORD + " text not null, " +
-            COLUMN_EMAIL + " text not null, " +
-            COLUMN_NUM + " text not null);";
+            COLUMN_EMAIL +    " text not null, " +
+            COLUMN_NUM +      " text not null, " +
+            COLUMN_ACTIVE +   " boolean not null);";
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

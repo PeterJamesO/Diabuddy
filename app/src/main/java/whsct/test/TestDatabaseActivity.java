@@ -36,7 +36,7 @@ public class TestDatabaseActivity extends ListActivity {
                 int random = new Random().nextInt(3);
                 String[] usernames = new String[] { "Bob", "Jo", "Betty" };
                 String email = usernames[random] + "@gmail.com";
-                user = dataSource.createUser(usernames[random], "ZAQzaq123", email, "+447516253460");
+                user = dataSource.createUser(usernames[random], "ZAQzaq123", email, "+447516253460", false);
                 adapter.add("Username:\t" + user.getUsername() + "\nDr.'s email:\t" + user.getEmail());
                 break;
             case R.id.deleteUser:

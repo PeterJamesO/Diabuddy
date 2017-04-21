@@ -22,7 +22,8 @@ public class DataSource {
             MySQLiteHelper.COLUMN_USERNAME, 
             MySQLiteHelper.COLUMN_PASSWORD, 
             MySQLiteHelper.COLUMN_EMAIL, 
-            MySQLiteHelper.COLUMN_NUM
+            MySQLiteHelper.COLUMN_NUM,
+            MySQLiteHelper.COLUMN_ACTIVE
     };
 
     // Constructor
@@ -39,12 +40,13 @@ public class DataSource {
         mySQLiteHelper.close();
     }
     
-    public UserData createUser(String username, String password, String email, String number) {
+    public UserData createUser(String username, String password, String email, String number, boolean active) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_USERNAME, username);
         values.put(MySQLiteHelper.COLUMN_PASSWORD, password);
         values.put(MySQLiteHelper.COLUMN_EMAIL, email);
         values.put(MySQLiteHelper.COLUMN_NUM, number);
+        values.put(MySQLiteHelper.COLUMN_ACTIVE, active);
         long insertID = database.insert(MySQLiteHelper.TABLE_NAME, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME, allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertID, null, null, null, null);
         cursor.moveToFirst();
@@ -87,6 +89,7 @@ public class DataSource {
         user.setPassword(cursor.getString(2));
         user.setEmail(cursor.getString(3));
         user.setNumber(cursor.getString(4));
+        user.setActive(Boolean.getBoolean(cursor.getString(5)));
         
         return user;
     }

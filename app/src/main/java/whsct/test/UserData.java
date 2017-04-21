@@ -11,10 +11,15 @@ public class UserData {
     private String password;
     private String email;
     private String number;
+    private boolean active;
 
     @Override
-    public String toString() {
-        return super.toString();
+    public String toString() { return
+              "ID: "          + this.id +
+            "\nUsername:\t"   + this.username +
+            "\nPassword:\t"   + this.password +
+            "\nDr's Email\t"  + this.email +
+            "\nDr's Number\t" + this.number;
     }
 
     // Getters and Setters
@@ -57,4 +62,8 @@ public class UserData {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    public boolean isActive() { return active; }
+
+    public void setActive(boolean active) { this.active = active; }
 }

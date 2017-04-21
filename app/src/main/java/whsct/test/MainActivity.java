@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
 
         // Find username and password in database
+        int counter = 0;
         for (UserData user: users) {
-            if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().contentEquals(password)) {
+            if (user.getUsername().equalsIgnoreCase(username) && users.get(counter).getPassword().contentEquals(password)) {
                 // Valid user
                 invalid = false;
 
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             }
+            ++counter;
         }
         if (invalid) {
             TextView textView = (TextView) findViewById(R.id.validationMsg);
