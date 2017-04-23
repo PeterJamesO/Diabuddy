@@ -9,9 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jamiegardner on 20/04/2017.
- */
 
 public class DataSource {
     // Database Fields
