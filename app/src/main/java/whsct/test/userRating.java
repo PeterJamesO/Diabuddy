@@ -73,7 +73,8 @@ public class userRating extends AppCompatActivity {
         email.setType("message/rfc822");
         email.putExtra(Intent.EXTRA_EMAIL, new String[]{"peterjameso@outlook.com"});
         email.putExtra(Intent.EXTRA_SUBJECT, "Feedback " + username.getText().toString() + " - " + date);
-        email.putExtra(android.content.Intent.EXTRA_TEXT, "Username: " + username.getText().toString() + "\nThe volunteer provided sufficient help: " + onCheckedChanged() + "\nRating: " + ratingB.getRating());
+        email.putExtra(android.content.Intent.EXTRA_TEXT, "Username: " + username.getText().toString() +
+                "\nThe volunteer provided sufficient help: " + onCheckedChanged() + "\nRating: " + ratingB.getRating());
         startActivity(email);
         Log.d("DEBUGGER", "We did it");
     }

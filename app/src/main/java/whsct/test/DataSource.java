@@ -37,7 +37,8 @@ public class DataSource {
         mySQLiteHelper.close();
     }
     
-    public UserData createUser(String username, String password, String email, String number, String active) {
+    public UserData createUser(String username, String password,
+                               String email, String number, String active) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_USERNAME, username);
         values.put(MySQLiteHelper.COLUMN_PASSWORD, password);
@@ -45,7 +46,8 @@ public class DataSource {
         values.put(MySQLiteHelper.COLUMN_NUM, number);
         values.put(MySQLiteHelper.COLUMN_ACTIVE, active);
         long insertID = database.insert(MySQLiteHelper.TABLE_NAME, null, values);
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME, allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertID, null, null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME, allColumns,
+                MySQLiteHelper.COLUMN_ID + " = " + insertID, null, null, null, null);
         cursor.moveToFirst();
         UserData newUser = cursorToUser(cursor);
         cursor.close();

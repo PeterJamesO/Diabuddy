@@ -10,7 +10,7 @@ import android.util.Log;
  */
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
-    public static final String TABLE_NAME = "GardnerOne";
+    public static final String TABLE_NAME = "Diabuddy";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_USERNAME = "Username";
     public static final String COLUMN_PASSWORD = "Password";
@@ -18,7 +18,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_NUM   = "Telephone";
     public static final String COLUMN_ACTIVE = "Online";
 
-    private static final String DATABASE_NAME = "GardnerOne.db";
+    private static final String DATABASE_NAME = "DiabuddyUser.db";
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_CREATE =
             "create table " + TABLE_NAME + "( " +
